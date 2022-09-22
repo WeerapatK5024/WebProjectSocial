@@ -34,8 +34,8 @@ const AddThread = () =>{
       }
     
     return (
-        <div>
-        <button onClick={openForm}>Create Post</button>
+        <div><br/>
+        <button className="topic" onClick={openForm}>+ Create Post</button>
         <div className="form-popup" id="myForm">
             <form className="form-container" onSubmit={addThread}>
             <input className="title"

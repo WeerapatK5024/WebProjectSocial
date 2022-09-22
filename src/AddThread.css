@@ -62,7 +62,16 @@
   margin: 10px;
   margin-top: 0px;
 }
+
 .button{
   text-align: center;
   font-size: medium;
+}
+.topic{
+  text-align: center;
+  font-size: medium;
+  border: solid 1px black;
+  padding: 5px;
+  position: relative;
+  left: 20%;
 }
