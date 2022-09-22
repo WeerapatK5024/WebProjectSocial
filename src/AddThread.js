@@ -3,8 +3,8 @@ import { ThreadContext } from "./ThreadContext";
 import './AddThread.css';
 
 const AddThread = () =>{
-    const [title , setTitle] = useState();
-    const [content , setContent] = useState();
+    const [title , setTitle] = useState('');
+    const [content , setContent] = useState('');
     const [threads, setThreads] = useContext(ThreadContext);
 
     const updateTitle = (e) => {
@@ -18,11 +18,16 @@ const AddThread = () =>{
     const addThread = e => {
         e.preventDefault();
         setThreads(prevThreads => [...prevThreads, {title : title, content : content}]); // make copy of previous object
+        setTitle('');
+        setContent('');
         $("myForm").style.display = "none";
+
+        
     };
 
     const closeForm = () => {
         $("myForm").style.display = "none";
+        
     }
     const openForm = () => {
         $("myForm").style.display = "block";
