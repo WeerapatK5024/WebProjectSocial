@@ -18,26 +18,46 @@ const AddThread = () =>{
     const addThread = e => {
         e.preventDefault();
         setThreads(prevThreads => [...prevThreads, {title : title, content : content}]); // make copy of previous object
+        $("myForm").style.display = "none";
     };
+
+    const closeForm = () => {
+        $("myForm").style.display = "none";
+    }
+    const openForm = () => {
+        $("myForm").style.display = "block";
+    }
+
+    function $(id)
+      {
+        return document.getElementById(id); // <--- I don't actual know how this work
+      }
+    
     return (
-        <div className="firstdiv">
-        <form className="frameadd" onSubmit={addThread}>
-            <p>Thread name :</p>
-            <input className="inputbox1"
+        <div><br/>
+        <button className="topic" onClick={openForm}>+ Create Post</button>
+        <div className="form-popup" id="myForm">
+            <form className="form-container" onSubmit={addThread}>
+            <input className="title"
             type="text" 
             name="title" 
+            placeholder="Title"
             value={title} 
             onChange={updateTitle}/><br/>
-
-            <p>Thread content :</p>
-            <input className="inputbox2"
+            <textarea className="text"
             type="text" 
-            name="content" 
+            name="content"
+            placeholder="Text(optional)" 
             value={content} 
             onChange={updateContent}/>
             <br/>
-            <button>Submit</button>
+            <div className='button'>
+                <button type="submit" >Save</button><br/>
+                <button type='button' onClick={closeForm}>Close</button>
+            </div>
         </form>
+        </div>
+        
         </div>
     );
 };
