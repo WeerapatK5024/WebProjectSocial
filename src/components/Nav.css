@@ -1,0 +1,9 @@
+.userdash{
+    top: 67px;
+    border: solid 8px black;
+    padding: 20px;
+    text-align: left;
+    position: fixed;
+    margin-top: 5px;
+    left: -1px;
+}

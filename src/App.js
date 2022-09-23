@@ -1,13 +1,15 @@
 import './app.css';
-import {useState,React} from 'react';
+import React ,{useState,useContext} from 'react';
 import ThreadList from './components/ThreadList';
-
-
+import Nav from './components/Nav';
+import { ThreadProvider } from './ThreadContext';
+import AddThread from './AddThread';
 
 
 function App() {
+
   return (
-  
+    <ThreadProvider>
     <div>
       
     <div className='Headder'>
@@ -18,14 +20,15 @@ function App() {
 
   <div className="mainFrame">
   <div>
-      
-      <ThreadList/>
+    <Nav></Nav>  
+    <ThreadList/>
     
   </div>
-
+ <AddThread/>
   </div>
   
     </div>
+    </ThreadProvider>
   );
 }
 
