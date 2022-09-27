@@ -1,34 +1,46 @@
 import './app.css';
-import React ,{useState,useContext} from 'react';
+
+import { db } from './firebase';
+import { collection, Collections, onSnapshot, snapshotEqual } from 'firebase/firestore';
+import React, { useState, useContext, useEffect } from 'react';
 import ThreadList from './components/ThreadList';
 import Nav from './components/Nav';
 import { ThreadProvider } from './ThreadContext';
 import AddThread from './AddThread';
+import { Add } from '@mui/icons-material';
+import { AuthContextProvider } from './authContext';
 
 
 function App() {
+  // useEffect(() => {
+  //   onSnapshot(collection(db, 'post'), (snapshot) => {
+  //     AddThread(snapshot.docs.map(doc => doc.data()))
+  //   })
+  // }, [input]);
 
   return (
-    <ThreadProvider>
-    <div>
-      
-    <div className='Headder'>
-    <div className='homeText'>
-    HOME / PAGE 
-    </div>
-  </div>
+    <AuthContextProvider>
+      <ThreadProvider>
+        <div>
 
-  <div className="mainFrame">
-  <div>
-    <Nav></Nav>  
-    <ThreadList/>
-    
-  </div>
- <AddThread/>
-  </div>
-  
-    </div>
-    </ThreadProvider>
+          <div className='Headder'>
+            <div className='homeText'>
+              HOME / PAGE
+            </div>
+          </div>
+
+          <div className="mainFrame">
+            <div>
+              <Nav></Nav>
+              <ThreadList />
+
+            </div>
+            <AddThread />
+          </div>
+
+        </div>
+      </ThreadProvider>
+    </AuthContextProvider>
   );
 }
 
