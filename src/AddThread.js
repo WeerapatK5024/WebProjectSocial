@@ -91,6 +91,7 @@ const AddThread = () =>{
     
     return (
         <div><br/>
+
         <button className="topic" onClick={openForm} id='creatPost'>+ Create Post</button>
         <div className="form-popup" id="myForm">
             <form className="form-container" onSubmit={addThread}>
@@ -160,7 +161,7 @@ const AddThread = () =>{
                 <button className="buttonConclude buttonSave" type="submit" >Save</button><br/>
                 <button className="buttonConclude buttonClose" type='button' onClick={closeForm}>Close</button>
             </div>
-        </form>
+        </form> 
         </div>
         </div>
     );

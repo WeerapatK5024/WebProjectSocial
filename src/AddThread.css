@@ -85,7 +85,9 @@
   border: solid 1px black;
   padding: 5px;
   position: fixed;
+
   left: 20%;
+
 }
 .menu{
   font-size: medium;
