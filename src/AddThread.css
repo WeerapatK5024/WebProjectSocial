@@ -80,8 +80,8 @@
   font-size: medium;
   border: solid 1px black;
   padding: 5px;
-  position: relative;
-  left: 20%;
+  position: fixed;
+  left: 70%;
 }
 .menu{
   font-size: medium;
