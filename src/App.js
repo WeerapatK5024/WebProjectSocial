@@ -7,7 +7,7 @@ import ThreadList from './components/ThreadList';
 import Nav from './components/Nav';
 import { ThreadProvider } from './ThreadContext';
 import AddThread from './AddThread';
-import { Add } from '@mui/icons-material';
+// import { Add } from '@mui/icons-material';
 import { AuthContextProvider } from './authContext';
 
 

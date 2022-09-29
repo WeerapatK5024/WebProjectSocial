@@ -14,6 +14,9 @@ const AddThread = () =>{
 
     const updateTitle = (e) => {
         setTitle(e.target.value);
+        if(e.target.value.length==24){
+            $('alertTitle').innerHTML = '*You can enter a topic with only 24 characters*';
+        }
     }
 
     const updateContent = (e) => {
@@ -32,11 +35,12 @@ const AddThread = () =>{
 
     const closeForm = () => {
         $("myForm").style.display = "none";
-        
+        $('creatPost').style.display = 'block';
     }
     const openForm = () => {
         if(recursiveOpening%2==0){
             $("myForm").style.display = "block";
+            $('creatPost').style.display = 'none';
             recursiveOpening++;
         }
         else{
@@ -87,7 +91,7 @@ const AddThread = () =>{
     
     return (
         <div><br/>
-        <button className="topic" onClick={openForm}>+ Create Post</button>
+        <button className="topic" onClick={openForm} id='creatPost'>+ Create Post</button>
         <div className="form-popup" id="myForm">
             <form className="form-container" onSubmit={addThread}>
             <input className="title"
@@ -95,7 +99,10 @@ const AddThread = () =>{
             name="title" 
             placeholder="Title"
             value={title} required
-            onChange={updateTitle}/><br/>
+            maxLength={24}
+            onChange={updateTitle}/>
+            <span className="barEl" id="alertTitle"/>
+            <br/>
             <div className="menu">
                 <button id="post" type="button" className="bar" onClick={postClicking}>
                     <img src={post}/>
@@ -142,16 +149,16 @@ const AddThread = () =>{
                 onChange={updateContent} />
             </div>
             <div id="pollElement">
-
+                {/* none using */}
             </div>
             <div id="talkElement">
-
+                {/* none using */}
             </div>
             
             <br/>
             <div className='button'>
-                <button type="submit" >Save</button><br/>
-                <button type='button' onClick={closeForm}>Close</button>
+                <button className="buttonConclude buttonSave" type="submit" >Save</button><br/>
+                <button className="buttonConclude buttonClose" type='button' onClick={closeForm}>Close</button>
             </div>
         </form>
         </div>
