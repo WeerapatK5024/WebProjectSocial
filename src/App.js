@@ -4,6 +4,7 @@ import ThreadList from './components/ThreadList';
 import Nav from './components/Nav';
 import { ThreadProvider } from './ThreadContext';
 import AddThread from './AddThread';
+import Login from './components/Login'; 
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
     <div className='homeText'>
     HOME / PAGE 
     </div>
+    <Login></Login>
   </div>
 
   <div className="mainFrame">
