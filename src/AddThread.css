@@ -30,16 +30,17 @@
 .form-popup {
     display: none;
     position: fixed;
-    left:15%;
+    left:20%;
     font-size: x-small;
-    border: 2px solid #000000
 }
-
+  
 .form-container{
-  width: fit-content;
-  height: fit-content;
-  border-style: double;
-  background-color: white;
+    width: fit-content;
+    height: fit-content;
+    border-style: double;
+    border-radius: 50px;
+    border: 2px solid #000000;
+    background-color: rgb(255, 255, 255);
 }
 .title{
   outline: none;
@@ -47,8 +48,9 @@
   white-space: pre-wrap;
   overflow-wrap: break-word;
   border-style: groove;
-  margin: 10px;
+  margin: 15px;
   font-size: xx-large;
+  
 }
 .barEl{
   width: 900px;
@@ -73,7 +75,9 @@
 
 .button{
   text-align: center;
+  justify-content: center;
   font-size: medium;
+  display: flex;
 }
 .topic{
   text-align: center;
@@ -81,15 +85,35 @@
   border: solid 1px black;
   padding: 5px;
   position: fixed;
-  left: 70%;
+
+  left: 20%;
+
 }
 .menu{
   font-size: medium;
   position: relative;
 }
 .bar{
+  position: relative;
   text-align: center;
+  align-items:  center;
+  justify-content: center;
   border: groove 1px black;
   padding-left: 67.6px;
   padding-right: 67.6px;
+}
+.buttonConclude{
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  padding: 5px 15px 5px 15px;
+}
+.buttonSave{
+  /* border: groove 1px black; */
+  background-color: #00d084;
+}
+.buttonClose{
+  /* border: groove 1px black; */
+  background-color: #eb144c
+  ;
 }
