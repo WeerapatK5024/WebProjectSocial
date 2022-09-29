@@ -8,7 +8,7 @@ import Nav from './components/Nav';
 import { ThreadProvider } from './ThreadContext';
 import AddThread from './AddThread';
 
-import { Add } from '@mui/icons-material';
+
 import { AuthContextProvider } from './authContext';
 import Login from './components/Login'; 
 
