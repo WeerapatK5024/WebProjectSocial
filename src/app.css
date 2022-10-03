@@ -43,7 +43,8 @@
     align-items: center;
     justify-content: left;
     padding: 0px 50px;
-    border-bottom:8px solid black;
+    color: white;
+    border-bottom:8px solid darkgray;
   }
   
   .mainFrame{
