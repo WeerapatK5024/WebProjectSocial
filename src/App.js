@@ -1,19 +1,8 @@
 
 import './app.css';
 
-import { db } from './firebase';
-import { collection, Collections, onSnapshot, snapshotEqual } from 'firebase/firestore';
-import React, { useState, useContext, useEffect } from 'react';
-import ThreadList from './components/ThreadList';
-import Nav from './components/Nav';
-import { ThreadProvider } from './ThreadContext';
-import AddThread from './AddThread';
 
-
-import { AuthContextProvider } from './authContext';
-import Login from './components/Login'; 
-
-
+import Login from './components/Login';
 import { db } from "./firebase";
 import {
   collection,
@@ -30,10 +19,12 @@ import Signup from "./components/Signup";
 
 // import { Add } from '@mui/icons-material';
 import { AuthContextProvider } from "./authContext";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, BrowserRouter as Router, Route,Routes,Switch } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Account from "./components/Account";
-import { BrowserRouter, Link } from "react-router-dom/dist";
+import { Link } from "react-router-dom/dist";
+import House from './components/House';
+
 
 function App() {
   // useEffect(() => {
@@ -44,7 +35,7 @@ function App() {
 
   return (
     <>
-    <AuthContextProvider>
+      <AuthContextProvider>
       <ThreadProvider>
         <div>
           <div className="Headder">
@@ -59,19 +50,13 @@ function App() {
           </div>
         </div>
       </ThreadProvider>
-    </AuthContextProvider>
+    </AuthContextProvider> 
     <BrowserRouter>
-            <Routes>
-              <Route path="/signup" element={<Signup />} />
-
-              {/* <Route path='/account'element={
-                <ProtectedRoute>
-                  <Account />
-                </ProtectedRoute>
-              } 
-            /> */}
-            </Routes>
-          </BrowserRouter>
+    <Routes>
+      {/* <Route path="app" element={<App/>}/> */}
+      <Route path="house" element={<House/>}/>
+    </Routes>
+    </BrowserRouter>
     </>
   );
 }
